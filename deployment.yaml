@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devopsmate-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: devopsmate
+  template:
+    metadata:
+      labels:
+        app: devopsmate
+    spec:
+      containers:
+      - name: devopsmate
+        image: sundaram2023/devopsmate:latest
+        ports:
+        - containerPort: 8080
